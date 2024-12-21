@@ -38,6 +38,9 @@ body{
 }
 
 h1{
+    display: flex;
+    text-align: center;
+
     font-size: 3rem;
     color: hsla(0, 0%, 10%, 0.745);
 }

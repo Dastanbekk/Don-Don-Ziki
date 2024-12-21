@@ -5,9 +5,16 @@ const resultDisplay = document.getElementById('resultDisplay');
 const playerScoreDisplay = document.getElementById('playerScoreDisplay');
 const computerScoreDisplay = document.getElementById('computerScoreDisplay');
 const start = document.getElementById('start');
-const wrapper = document.getElementById('wrapper')
+const wrapper = document.getElementById('wrapper');
+const one = document.getElementById("one");
+const two = document.getElementById("two");
+const three = document.getElementById("three");
+const timer = document.getElementById("timer");
+const second = document.getElementById("second");
 let playerScore = 0;
 let computerScore = 0;
+let timerTime =0;
+let secondTime =0;
 
 function playGame(playerChoice){
 
@@ -63,7 +70,35 @@ function playGame(playerChoice){
 }
 
 const startgame = (()=>{
-    wrapper.style.display = 'flex';
+    setTimeout(()=>{
+        one.style.display = 'flex';
+    },1000)
+    setTimeout(()=>{
+        one.style.display = 'none';
+        two.style.display = 'flex';
+    },2000)
+    setTimeout(()=>{
+        two.style.display = 'none';
+        three.style.display = 'flex';
+    },3000)
+    setTimeout(()=>{
+        three.style.display = 'none';
+        wrapper.style.display = 'flex';
+        setInterval(()=>{
+            timerTime++
+            timer.textContent = timerTime;
+        }, 60000);
+        setInterval(()=>{
+            secondTime++
+            second.textContent = secondTime;
+            if(secondTime===60){
+                secondTime = 0;
+            }
+        }, 1000);
+        
+        
+    },4000)
+    one.style.display="none"
     start.style.display = "none";
 })
 
